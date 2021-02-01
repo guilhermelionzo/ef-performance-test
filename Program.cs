@@ -18,9 +18,8 @@ namespace EFGetStarted
 
         public static void Main(string[] args)
         {
-            Trace.WriteLine("Beggining");
-            if (!String.IsNullOrWhiteSpace(args?[0])) InputOption = Int32.Parse(args[0]);
-            if (!String.IsNullOrWhiteSpace(args?[1])) QuantityOfEntities = Int32.Parse(args[1]);
+            if (args.Count() > 0 && !String.IsNullOrWhiteSpace(args[0])) InputOption = Int32.Parse(args[0]);
+            if (args.Count() > 1 && !String.IsNullOrWhiteSpace(args[1])) QuantityOfEntities = Int32.Parse(args[1]);
 
             Console.WriteLine($"Chosen option: {Option}");
             Console.WriteLine($"Quantity of interations: {QuantityOfEntities}");
