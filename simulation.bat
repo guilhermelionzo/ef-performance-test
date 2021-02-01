@@ -2,7 +2,7 @@
 setlocal EnableDelayedExpansion
 setlocal EnableExtensions
 
-rem Fibonacci
+rem Simulation
 set /a i=0
 set /a limit=5
 :WHILE_0
