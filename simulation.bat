@@ -4,13 +4,15 @@ setlocal EnableExtensions
 
 rem Fibonacci
 set /a i=0
-set /a limit=10
+set /a limit=5
 :WHILE_0
 if !i! LSS !limit! (
    
-   dotnet run 0 !i!
-   dotnet run 1 !i!
-   
+   timeout /t 3 /nobreak > NUL
+   dotnet run 0 20
+   timeout /t 3 /nobreak > NUL
+   dotnet run 1 20
+   echo ----------------------------
    set /a i=^(!i! + 1^)
    goto WHILE_0
 )
