@@ -10,7 +10,7 @@ namespace EFGetStarted
 {
     static class Program
     {
-        private static int QuantityOfEntities = 10;
+        private static int QuantityOfQueries = 10;
         private static Stopwatch _stopWatch = new Stopwatch();
         private static BloggingContext _blogginContext = new BloggingContext();
         private static int InputOption = 0;
@@ -19,10 +19,10 @@ namespace EFGetStarted
         public static void Main(string[] args)
         {
             if (args.Count() > 0 && !String.IsNullOrWhiteSpace(args[0])) InputOption = Int32.Parse(args[0]);
-            if (args.Count() > 1 && !String.IsNullOrWhiteSpace(args[1])) QuantityOfEntities = Int32.Parse(args[1]);
+            if (args.Count() > 1 && !String.IsNullOrWhiteSpace(args[1])) QuantityOfQueries = Int32.Parse(args[1]);
 
             Console.WriteLine($"Chosen option: {Option}");
-            Console.WriteLine($"Quantity of interations: {QuantityOfEntities}");
+            Console.WriteLine($"Iterations: {QuantityOfQueries}");
 
             switch (InputOption)
             {
@@ -37,7 +37,7 @@ namespace EFGetStarted
         {
             _stopWatch.Start();
 
-            for (int i = 0; i < QuantityOfEntities; i++) CreateEntityLinq();
+            for (int i = 0; i < QuantityOfQueries; i++) CreateEntityLinq();
 
             var blogs = GetAllEntityLinq();
 
@@ -72,7 +72,7 @@ namespace EFGetStarted
         {
             _stopWatch.Start();
 
-            for (int i = 0; i < QuantityOfEntities; i++) CreateEntityRawSql();
+            for (int i = 0; i < QuantityOfQueries; i++) CreateEntityRawSql();
 
             var blogs = GetAllEntityRawSql();
 

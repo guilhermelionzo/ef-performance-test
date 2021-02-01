@@ -9,9 +9,9 @@ set /a limit=5
 if !i! LSS !limit! (
    
    timeout /t 3 /nobreak > NUL
-   dotnet run 0 100
+   dotnet run 0 1000
    timeout /t 3 /nobreak > NUL
-   dotnet run 1 100
+   dotnet run 1 1000
    echo ----------------------------
    set /a i=^(!i! + 1^)
    goto WHILE_0
